@@ -42,7 +42,7 @@ class NasSearch(Plugin):
                 if not files_found:
                     result_text = "未找到该文件，请检查名称是否正确。"
                 else:
-                    result_text = "找到以下文件：\n" + "\n".join(files_found)
+                    result_text = "找到以下文件：\n" + "\n\n".join(files_found)
 
                 reply = Reply(ReplyType.TEXT, result_text.strip())
                 event.channel.send(reply, event.message)
