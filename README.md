@@ -24,13 +24,11 @@
 "plugins": [
   {
     "name": "nas_search",
-    "command": ["搜索NAS：", "查找NAS："],
+    "command": ["搜索nas", "查找nas"],
     "drives": {
-      "A": "映射的文件夹名称",
-      "B": "映射的文件夹名称",
-      "C": "映射的文件夹名称"
+      "D": "盘符名称"
     },
-    "base_path": "\\\\你的NAS IP地址\\"
+    "base_path": "\\\\192.168.50.147\\"
   }
 ]
 ```
