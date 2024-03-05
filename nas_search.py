@@ -33,8 +33,9 @@ class NasSearch(Plugin):
 
         commands = [cmd.lower() for cmd in self.config.get("command", [])]
         for cmd in commands:
-            if query.startswith(cmd):
-                keyword = query.split("：", 1)[1]
+            match = re.match(rf"{cmd}\s*[:：]\s*(.*)", query, re.I)
+            if match:
+                keyword = match.group(1)
                 files_found = []
                 for local_path, network_path in self.drives.items():
                     files_found += self.search_files(local_path, network_path, keyword)
